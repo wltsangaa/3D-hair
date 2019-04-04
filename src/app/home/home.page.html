@@ -1,14 +1,67 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      <b>Sign In</b>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <font size=5px>Sign in</font>
+    <br>
+    <br>
+    <br>
+    <ion-list id="login-list4">
+      <div class="center_wrapper">
+        <font size=2px color=#8175C2>Email</font>
+      </div>
+      <ion-item id="login-input1">
+        <ion-input type="email" [(ngModel)]="email" placeholder=""></ion-input>
+      </ion-item>
+      <br>
+      <div class="center_wrapper">
+        <font size=2px color=#8175C2>Password</font>
+      </div>
+      <ion-item id="login-input2">
+        <ion-input type="password" [(ngModel)]="password" placeholder=""></ion-input>
+      </ion-item>
+      <div *ngIf="errorMessage!= Null">
+        Incorrect Email/Password
+      </div>
+    </ion-list>
   </div>
+  <br>
+  <div class="center_wrapper">
+    <button class="round_button" ion-button round [disabled]="!email || !password" (click)="login()">
+      SIGN IN
+    </button>
+  </div>
+  <div class="center_wrapper" style="margin: 6px">
+    <button ion-button [disabled]="!email || !password" (click)="login()">
+      <font size=2px color=#8175C2>Forget password?</font>
+    </button>
+  </div>
+  <br>
+  <div class="center_wrapper">
+      or
+  </div>
+  <br>
+  <div class="center_wrapper" style="margin: 6px">
+    <img src="/assets/imgs/facebook.png" width=50px height=50px style="margin-left: 25px; margin-right: 25px;">
+    <img src="/assets/imgs/google_plus.png" width=50px height=50px style="margin-left: 25px; margin-right: 25px;">
+  </div>
+  <div class="center_wrapper" style="margin: 6px">
+    <font size=2px color=#8175C2>Don't have an account?</font>
+    <button ion-button [disabled]="!email || !password" (click)="login()">
+      <font size=2px color=#9E8EF0>SIGN UP</font>
+    </button>
+  </div>
+    <!--<button id="login-button14" ion-button color="positive" block>
+      Login with Facebook
+    </button>
+  -->
 </ion-content>
