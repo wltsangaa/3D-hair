@@ -17,9 +17,10 @@
     <br>
     <ion-list id="login-list4">
       <div class="center_wrapper">
-        <font size=2px color=#8175C2>Email</font>
+        <font size=2px color=#8175C2>Username</font>
       </div>
       <ion-item id="login-input1">
+        <img src="/assets/imgs/person.png" width=auto height=30px style="opacity: 0.25">
         <ion-input type="email" [(ngModel)]="email" placeholder=""></ion-input>
       </ion-item>
       <br>
@@ -27,6 +28,7 @@
         <font size=2px color=#8175C2>Password</font>
       </div>
       <ion-item id="login-input2">
+        <img src="/assets/imgs/password.png" width=auto height=30px style="opacity: 0.25">
         <ion-input type="password" [(ngModel)]="password" placeholder=""></ion-input>
       </ion-item>
       <div *ngIf="errorMessage!= Null">
@@ -51,8 +53,8 @@
   </div>
   <br>
   <div class="center_wrapper" style="margin: 6px">
-    <img src="/assets/imgs/facebook.png" width=50px height=50px style="margin-left: 25px; margin-right: 25px;">
-    <img src="/assets/imgs/google_plus.png" width=50px height=50px style="margin-left: 25px; margin-right: 25px;">
+    <img src="/assets/imgs/facebook.png" width=auto height=50px style="margin-left: 25px; margin-right: 25px;">
+    <img src="/assets/imgs/google_plus.png" width=auto height=50px style="margin-left: 25px; margin-right: 25px;">
   </div>
   <div class="center_wrapper" style="margin: 6px">
     <font size=2px color=#8175C2>Don't have an account?</font>
@@ -60,8 +62,8 @@
       <font size=2px color=#9E8EF0>SIGN UP</font>
     </button>
   </div>
-    <!--<button id="login-button14" ion-button color="positive" block>
-      Login with Facebook
-    </button>
-  -->
+  <br>
+  <div class="center_wrapper" style="margin: 6px">
+    <img src="/assets/imgs/three_d_hair_logo.png">
+  </div>
 </ion-content>

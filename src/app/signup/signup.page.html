@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <b>Sign Up</b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <font size=5px>Sign up</font>
+    <br>
+    <br>
+    <br>
+    <ion-list id="login-list4">
+      <div class="center_wrapper">
+        <font size=2px color=#8175C2>User Name</font>
+      </div>
+      <ion-item id="login-input1">
+        <img src="/assets/imgs/person.png" width=auto height=30px style="opacity: 0.25">
+        <ion-input type="email" [(ngModel)]="username" placeholder=""></ion-input>
+      </ion-item>
+      <br>
+      <div class="center_wrapper">
+        <font size=2px color=#8175C2>Email Address</font>
+      </div>
+      <ion-item id="login-input2">
+        <img src="/assets/imgs/email_address.png" width=auto height=30px style="opacity: 0.25">
+        <ion-input type="email" [(ngModel)]="email" placeholder=""></ion-input>
+      </ion-item>
+      <br>
+      <div class="center_wrapper">
+        <font size=2px color=#8175C2>Country</font>
+      </div>
+      <ion-item id="login-input2">
+        <img src="/assets/imgs/country.png" width=auto height=30px style="opacity: 0.25">
+        <ion-input type="email" [(ngModel)]="country" placeholder=""></ion-input>
+      </ion-item>
+      <br>
+      <div class="center_wrapper">
+        <font size=2px color=#8175C2>Password</font>
+      </div>
+      <ion-item id="login-input2">
+        <img src="/assets/imgs/password.png" width=auto height=30px style="opacity: 0.25">
+        <ion-input type="password" [(ngModel)]="password" placeholder=""></ion-input>
+      </ion-item>
+      <div *ngIf="errorMessage!= Null">
+        Incorrect Email/Password
+      </div>
+    </ion-list>
+  </div>
+  <br>
+  <div class="center_wrapper">
+    <button class="round_button" ion-button round [disabled]="!email || !password" (click)="login()">
+      SIGN UP
+    </button>
+  </div>
+  <div class="center_wrapper" style="margin: 6px">
+    <font size=2px color=#8175C2>Have an account?</font>
+    <button ion-button [disabled]="!email || !password" (click)="login()">
+      <font size=2px color=#9E8EF0>SIGN IN</font>
+    </button>
+  </div>
+  <br>
+  <div class="center_wrapper" style="margin: 6px">
+    <img src="/assets/imgs/three_d_hair_logo.png">
+  </div>
+</ion-content>
