@@ -21,7 +21,7 @@
       </div>
       <ion-item id="login-input1">
         <img src="/assets/imgs/person.png" width=auto height=30px style="opacity: 0.25">
-        <ion-input type="email" [(ngModel)]="username" placeholder=""></ion-input>
+        <ion-input type="text" [(ngModel)]="username" placeholder=""></ion-input>
       </ion-item>
       <br>
       <div class="center_wrapper">
@@ -32,13 +32,27 @@
         <ion-input type="email" [(ngModel)]="email" placeholder=""></ion-input>
       </ion-item>
       <br>
-      <div class="center_wrapper">
-        <font size=2px color=#8175C2>Country</font>
+      <div>
+        <div class="center_wrapper" style="float: left; width: 47.5%;">
+          <div class="center_wrapper">
+            <font size=2px color=#8175C2>Country</font>
+          </div>
+          <ion-item id="login-input2">
+            <img src="/assets/imgs/country.png" width=auto height=30px style="opacity: 0.25">
+            <ion-input type="text" [(ngModel)]="country" placeholder=""></ion-input>
+          </ion-item>
+        </div>
+        <div class="center_wrapper" style="float: right; width: 47.5%;">
+          <div class="center_wrapper">
+            <font size=2px color=#8175C2>Phone Number</font>
+          </div>
+          <ion-item id="login-input2">
+            <img src="/assets/imgs/phone_number.png" width=auto height=30px style="opacity: 0.25">
+            <ion-input type="tel" [(ngModel)]="phone_number" placeholder=""></ion-input>
+          </ion-item>
+        </div>
+        <br style="clear:both;" />
       </div>
-      <ion-item id="login-input2">
-        <img src="/assets/imgs/country.png" width=auto height=30px style="opacity: 0.25">
-        <ion-input type="email" [(ngModel)]="country" placeholder=""></ion-input>
-      </ion-item>
       <br>
       <div class="center_wrapper">
         <font size=2px color=#8175C2>Password</font>
