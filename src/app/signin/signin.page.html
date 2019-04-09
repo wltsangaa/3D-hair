@@ -43,7 +43,7 @@
     </button>
   </div>
   <div class="center_wrapper" style="margin: 6px">
-    <button ion-button [disabled]="!email || !password" (click)="login()">
+    <button ion-button (click)="login()">
       <font size=2px color=#8175C2>Forget password?</font>
     </button>
   </div>
@@ -58,7 +58,7 @@
   </div>
   <div class="center_wrapper" style="margin: 6px">
     <font size=2px color=#8175C2>Don't have an account?</font>
-    <button ion-button [disabled]="!email || !password" (click)="login()">
+    <button ion-button (click)="goToSignup()">
       <font size=2px color=#9E8EF0>SIGN UP</font>
     </button>
   </div>

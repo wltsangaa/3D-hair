@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <b>Home</b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card style="background:#7F6CFF; box-shadow: none; border-radius: 10px">
+		<ion-card-content style="color:white">
+			<div style="display:inline-block;">
+			    <div><font size="3px"><b>Your total charges are</b></font></div>
+			    <div>
+			    	<font size="2px">$</font>
+			    	<font size="5px">999.00</font>
+			    </div>
+			    <div><font size="3px">Due date 22/02/2019</font></div>
+			</div>
+			<div style="float: right; text-align: center">
+				<button style="background: transparent; color: white; border-radius: 100px; border: 2px solid white; padding: 15px 25px 15px 25px;">
+					<font size="4px">PAY NOW</font>
+				</button>
+			</div>
+			<br style="clear:both;" />
+			<hr style="background-color: white"/>
+			<div tappable (click)="goToProfile()">
+				<div style="display:inline-block; width: 20%">
+					<img src="/assets/imgs/avatar.png" style="width: auto; height: 80px"> 
+				</div>
+				<div style="display:inline-block; width: 80%;">
+			  		<div style="margin: 3px"><font size="3px"><b>Benjamin Trolio</b></font></div>
+			  		<div style="margin: 3px"><font size="3px">Using Hairstyle #1b</font></div>
+			  		<div style="margin: 3px">
+			  			<ion-progress-bar 
+			  			value=0.37 
+			  			style=
+			  			"border-radius: 100px;
+			  			 height: 15px;
+			  			 --buffer-background: white;
+			  			 --progress-background: #C0C0F0;">
+			  			</ion-progress-bar>
+			  		</div>
+			  		<div style="margin: 3px">
+				  		<font size="3px" style="opacity: 0.5">37% Usage</font>
+				  	</div>
+			  	</div>
+			  	<br style="clear:both;" />
+			  </div>
+	  	</ion-card-content>
+	</ion-card>
+	<table>
+		<tr>
+			<td style="padding: 7px 10px 7px 10px">
+				<img src="/assets/imgs/home_bills.png">
+			</td>
+			<td style="padding: 7px 10px 7px 10px">
+				<img src="/assets/imgs/home_bookings.png">
+			</td>
+		</tr>
+		<tr>
+			<td style="padding: 7px 10px 7px 10px">
+				<img src="/assets/imgs/home_news.png">
+			</td>
+			<td style="padding: 7px 10px 7px 10px">
+				<img src="/assets/imgs/home_products.png">
+			</td>
+		</tr>
+		<tr>
+			<td style="padding: 7px 10px 7px 10px">
+				<img src="/assets/imgs/home_customer_care.png">
+			</td>
+			<td style="padding: 7px 10px 7px 10px"></td>
+		</tr>
+	</table>
+</ion-content>

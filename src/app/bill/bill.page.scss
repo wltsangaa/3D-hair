@@ -1,0 +1,11 @@
+ion-header::after {
+background-image: none;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+}
