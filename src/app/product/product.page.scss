@@ -1,3 +1,50 @@
 ion-header::after {
 background-image: none;
 }
+
+.month-button {
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px 10px 20px 10px;
+}
+
+.month-button-selected {
+	background-color: #F5F5F5;
+	color: #7869FF;
+}
+
+.month-button-unselected {
+	background-color: transparent;
+	color: black;
+}
+
+.day-button {
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 3px 10px 3px; 
+}
+
+.day-button-selected {
+	background-color: #7869FF;
+	color: white;
+}
+
+.day-button-unselected {
+	background-color: transparent;
+	color: black;
+}
+
+.duration-button {
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px 3px 10px 3px; 
+}
+
+.duration-button-selected {
+	background-color: #7869FF;
+	color: white;
+}
+
+.duration-button-unselected {
+	background-color: transparent;
+	color: black;
+}

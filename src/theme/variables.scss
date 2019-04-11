@@ -75,10 +75,19 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
   
-  --sign-in-purple: #8175C2;
-  --sign-in-purple-rgb: 129, 117, 194;
-  --sign-in-purple-contrast: #FFFFFF;
-  --sign-in-purple-contrast-rgb: 255, 255, 255;
-  --sign-in-purple-shade: #7165B2;
-  --sign-in-purple-tint: #9E8EF0;
+  /** deep purple **/
+  --ion-color-deep-purple: #8175C2;
+  --ion-color-deep-purple-rgb: 129, 117, 194;
+  --ion-color-deep-purple-contrast: #FFFFFF;
+  --ion-color-deep-purple-contrast-rgb: 255, 255, 255;
+  --ion-color-deep-purple-shade: #7165B2;
+  --ion-color-deep-purple-tint: #9E8EF0;
+
+  /** orange **/
+  --ion-color-orange: #FF7346;
+  --ion-color-orange-rgb: 255, 115, 70;
+  --ion-color-orange-contrast: #FFFFFF;
+  --ion-color-orange-contrast-rgb: 255, 255, 255;
+  --ion-color-orange-shade: #EF6336;
+  --ion-color-orange-tint: #FF8356;
 }

@@ -4,10 +4,113 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>
-      <b>Custom Styling Session</b>
+      <b>Bookings</b>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="text-align: center">
+	<img src="/assets/imgs/product_thumbnail.jpg" style="width: 100%; height: auto;">
+	<ion-card>
+		<ion-card-content style="bottom: -13px">
+			<font size="4px" style="color: black">Hairstyle #3c</font>
+			<br>
+			<ion-slides pager="true">
+				<ion-slide>
+					<div>
+						<font size="3px" style="color: black; opacity: 0.5"></font><br><br>
+					</div>
+				</ion-slide>
+				<ion-slide>
+					<div>
+						<font size="3px" style="color: black; opacity: 0.5">Includes 24 free maintenance session</font><br><br>
+					</div>
+				</ion-slide>
+				<ion-slide>
+					<div>
+						<font size="3px" style="color: black; opacity: 0.5"></font><br><br>
+					</div>
+				</ion-slide>
+			</ion-slides>
+		</ion-card-content>
+	</ion-card>
+	Start date
+	<ion-card>
+		<ion-card-content style="padding: 10px 0px 10px 0px">
+			<div>
+				<button class="month-button month-button-unselected">
+					<font size="3px">Aug</font>
+				</button>
+				<button class="month-button month-button-unselected">
+					<font size="3px">Sep</font>
+				</button>
+				<button class="month-button month-button-unselected">
+					<font size="3px">Oct</font>
+				</button>
+				<button class="month-button month-button-unselected">
+					<font size="3px">Nov</font>
+				</button>
+				<button class="month-button month-button-selected">
+					<font size="3px">Dec</font>
+				</button>
+				<button class="month-button month-button-unselected">
+					<font size="3px">Jan 18</font>
+				</button>
+				<button class="month-button month-button-unselected">
+					<font size="3px">Feb 18</font>
+				</button>
+			</div>
+			<div style="background-color: #F5F5F5;">
+				<button class="day-button day-button-unselected">
+					<font size="3px">3</font>
+				</button>
+				<button class="day-button day-button-unselected">
+					<font size="3px">4</font>
+				</button>
+				<button class="day-button day-button-unselected">
+					<font size="3px">5</font>
+				</button>
+				<button class="day-button day-button-selected">
+					<font size="3px">6</font>
+				</button>
+				<button class="day-button day-button-unselected">
+					<font size="3px">7</font>
+				</button>
+				<button class="day-button day-button-unselected">
+					<font size="3px">8</font>
+				</button>
+				<button class="day-button day-button-unselected">
+					<font size="3px">9</font>
+				</button>
+				<button class="day-button day-button-unselected">
+					<font size="3px">10</font>
+				</button>
+				<button class="day-button day-button-unselected">
+					<font size="3px">11</font>
+				</button>
+			</div>
+			<div>
+				<button class="duration-button duration-button-selected">
+					<font size="3px">1 month</font>
+				</button>
+				<button class="duration-button duration-button-unselected">
+					<font size="3px">2 months</font>
+				</button>
+				<button class="duration-button duration-button-unselected">
+					<font size="3px">3 months</font>
+				</button>
+			</div>
+		</ion-card-content>
+	</ion-card>
+	<ion-card>
+		<ion-card-content style="padding: 15px 20px 15px 20px; background-color: #7869FF">
+			<div style="float: left">
+				<font size="3px" color="white">HKD$999 per month</font>
+			</div>
+			<div style="float: right">
+				<font size="3px" color="white">Book now</font>
+			</div>
+			<br style="clear:both;" />
+		</ion-card-content>
+	</ion-card>
 </ion-content>

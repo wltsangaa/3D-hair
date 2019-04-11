@@ -34,3 +34,21 @@ ion-title {
 .center_wrapper {
     text-align: center;
 }
+
+.ion-color-purple {
+  --ion-color-base: var(--ion-color-purple) !important;
+  --ion-color-base-rgb: var(--ion-color-purple-rgb) !important;
+  --ion-color-contrast: var(--ion-color-purple-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-purple-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-purple-shade) !important;
+  --ion-color-tint: var(--ion-color-purple-tint) !important;
+}
+
+.ion-color-orange {
+  --ion-color-base: var(--ion-color-orange) !important;
+  --ion-color-base-rgb: var(--ion-color-orange-rgb) !important;
+  --ion-color-contrast: var(--ion-color-orange-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-orange-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-orange-shade) !important;
+  --ion-color-tint: var(--ion-color-orange-tint) !important;
+}
