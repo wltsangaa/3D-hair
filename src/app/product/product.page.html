@@ -4,7 +4,7 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>
-      <b>Bookings</b>
+      <b>Custom Styling Session</b>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,20 +15,10 @@
 		<ion-card-content style="bottom: -13px">
 			<font size="4px" style="color: black">Hairstyle #3c</font>
 			<br>
-			<ion-slides pager="true">
-				<ion-slide>
+			<ion-slides pager="true" #mySlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)" loop="true">
+				<ion-slide *ngFor="let product_content of product_contents">
 					<div>
-						<font size="3px" style="color: black; opacity: 0.5"></font><br><br>
-					</div>
-				</ion-slide>
-				<ion-slide>
-					<div>
-						<font size="3px" style="color: black; opacity: 0.5">Includes 24 free maintenance session</font><br><br>
-					</div>
-				</ion-slide>
-				<ion-slide>
-					<div>
-						<font size="3px" style="color: black; opacity: 0.5"></font><br><br>
+						<font size="3px" style="color: black; opacity: 0.5">{{product_content}}</font><br><br>
 					</div>
 				</ion-slide>
 			</ion-slides>
@@ -38,66 +28,18 @@
 	<ion-card>
 		<ion-card-content style="padding: 10px 0px 10px 0px">
 			<div>
-				<button class="month-button month-button-unselected">
-					<font size="3px">Aug</font>
-				</button>
-				<button class="month-button month-button-unselected">
-					<font size="3px">Sep</font>
-				</button>
-				<button class="month-button month-button-unselected">
-					<font size="3px">Oct</font>
-				</button>
-				<button class="month-button month-button-unselected">
-					<font size="3px">Nov</font>
-				</button>
-				<button class="month-button month-button-selected">
-					<font size="3px">Dec</font>
-				</button>
-				<button class="month-button month-button-unselected">
-					<font size="3px">Jan 18</font>
-				</button>
-				<button class="month-button month-button-unselected">
-					<font size="3px">Feb 18</font>
+				<button class="month-button" *ngFor="let month of months" (click)="select_month(month)" [ngClass]="month==selected_month?'month-button-selected':'month-button-unselected'">
+					<font size="3px">{{month}}</font>
 				</button>
 			</div>
 			<div style="background-color: #F5F5F5;">
-				<button class="day-button day-button-unselected">
-					<font size="3px">3</font>
-				</button>
-				<button class="day-button day-button-unselected">
-					<font size="3px">4</font>
-				</button>
-				<button class="day-button day-button-unselected">
-					<font size="3px">5</font>
-				</button>
-				<button class="day-button day-button-selected">
-					<font size="3px">6</font>
-				</button>
-				<button class="day-button day-button-unselected">
-					<font size="3px">7</font>
-				</button>
-				<button class="day-button day-button-unselected">
-					<font size="3px">8</font>
-				</button>
-				<button class="day-button day-button-unselected">
-					<font size="3px">9</font>
-				</button>
-				<button class="day-button day-button-unselected">
-					<font size="3px">10</font>
-				</button>
-				<button class="day-button day-button-unselected">
-					<font size="3px">11</font>
+				<button class="day-button" *ngFor="let day of days" (click)="select_day(day)" [ngClass]="day==selected_day?'day-button-selected':'day-button-unselected'">
+					<font size="3px">{{day}}</font>
 				</button>
 			</div>
 			<div>
-				<button class="duration-button duration-button-selected">
-					<font size="3px">1 month</font>
-				</button>
-				<button class="duration-button duration-button-unselected">
-					<font size="3px">2 months</font>
-				</button>
-				<button class="duration-button duration-button-unselected">
-					<font size="3px">3 months</font>
+				<button class="duration-button" *ngFor="let duration of durations" (click)="select_duration(duration)" [ngClass]="duration==selected_duration?'duration-button-selected':'duration-button-unselected'">
+					<font size="3px">{{duration}} months</font>
 				</button>
 			</div>
 		</ion-card-content>

@@ -16,27 +16,27 @@
 			    <div><font size="3px"><b>Your total charges are</b></font></div>
 			    <div>
 			    	<font size="2px">$</font>
-			    	<font size="5px">999.00</font>
+			    	<font size="5px">{{user_info.charge.amount}}</font>
 			    </div>
-			    <div><font size="3px">Due date 22/02/2019</font></div>
+			    <div><font size="3px">Due date {{user_info.charge.due_date}}</font></div>
 			</div>
 			<div style="float: right; text-align: center">
-				<button style="background: transparent; color: white; border-radius: 100px; border: 2px solid white; padding: 15px 25px 15px 25px;">
+				<button *ngIf="user_info.charge.amount > 0" style="background: transparent; color: white; border-radius: 100px; border: 2px solid white; padding: 15px 25px 15px 25px;">
 					<font size="4px">PAY NOW</font>
 				</button>
 			</div>
 			<br style="clear:both;" />
 			<hr style="background-color: white"/>
-			<div tappable (click)="goToProfile()">
+			<div tappable (click)="goToPage('profile')">
 				<div style="display:inline-block; width: 20%">
-					<img src="/assets/imgs/avatar.jpg" style="width: auto; height: 80px"> 
+					<img [src]="user_info.avatar_img" style="width: auto; height: 80px"> 
 				</div>
 				<div style="display:inline-block; width: 80%;">
-			  		<div style="margin: 3px"><font size="3px"><b>Benjamin Trolio</b></font></div>
+			  		<div style="margin: 3px"><font size="3px"><b>{{user_info.username}}</b></font></div>
 			  		<div style="margin: 3px"><font size="3px">Using Hairstyle #1b</font></div>
 			  		<div style="margin: 3px">
 			  			<ion-progress-bar 
-			  			value=0.37 
+			  			[value]="user_info.product.usage" 
 			  			style=
 			  			"border-radius: 100px;
 			  			 height: 15px;
@@ -45,7 +45,7 @@
 			  			</ion-progress-bar>
 			  		</div>
 			  		<div style="margin: 3px">
-				  		<font size="3px" style="opacity: 0.5">37% Usage</font>
+				  		<font size="3px" style="opacity: 0.5">{{user_info.product.usage*100}}% Usage</font>
 				  	</div>
 			  	</div>
 			  	<br style="clear:both;" />
@@ -55,23 +55,23 @@
 	<table>
 		<tr>
 			<td style="padding: 7px 10px 7px 10px">
-				<img src="/assets/imgs/home_bills.png">
+				<img src="/assets/imgs/home_bills.png" (click)="goToPage('bill')">
 			</td>
 			<td style="padding: 7px 10px 7px 10px">
-				<img src="/assets/imgs/home_bookings.png">
-			</td>
-		</tr>
-		<tr>
-			<td style="padding: 7px 10px 7px 10px">
-				<img src="/assets/imgs/home_news.png">
-			</td>
-			<td style="padding: 7px 10px 7px 10px">
-				<img src="/assets/imgs/home_products.png">
+				<img src="/assets/imgs/home_bookings.png" (click)="goToPage('booking')">
 			</td>
 		</tr>
 		<tr>
 			<td style="padding: 7px 10px 7px 10px">
-				<img src="/assets/imgs/home_customer_care.png">
+				<img src="/assets/imgs/home_news.png" (click)="goToPage('news')">
+			</td>
+			<td style="padding: 7px 10px 7px 10px">
+				<img src="/assets/imgs/home_products.png" (click)="goToPage('product')">
+			</td>
+		</tr>
+		<tr>
+			<td style="padding: 7px 10px 7px 10px">
+				<img src="/assets/imgs/home_customer_care.png" (click)="goToPage('customer_care')">
 			</td>
 			<td style="padding: 7px 10px 7px 10px"></td>
 		</tr>

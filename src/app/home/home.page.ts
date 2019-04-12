@@ -7,9 +7,23 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+	user_info: object;
+
   constructor(private router: Router) {
+  	this.user_info = {
+  		username: "Benjamin Trolio",
+  		avatar_img: "/assets/imgs/avatar.png", 
+  		charge: {
+  			amount: 0, 
+  			due_date: "22/02/2019"
+  		},
+  		product: {
+  			name: "Hairstyle #1b", 
+  			usage: 0.67
+  		}
+  	};
   }
-  goToProfile() {
-    this.router.navigate(["/profile"]);
+  goToPage(page) {
+  	this.router.navigate(["/" + page]);
   }
 }

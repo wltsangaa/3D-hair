@@ -11,110 +11,26 @@
 
 <ion-content>
 	<ion-list>
-	  <ion-item>
-	  	<div style="display: flex; align-items: center; width: 100%">
-	  		<div style="flex: 1">
-				<img src="/assets/imgs/news_1.jpg" style="width: 70px; height: auto;">
+		<ion-item *ngFor="let news_feed of news_feeds">
+			<div style="display: flex; align-items: center; width: 100%">
+				<div style="flex: 1">
+					<img [src]="news_feed.photo" style="width: 70px; height: auto;">
+				</div>
+				<div style="padding: 10px 0px 10px 0px; flex: 4">
+			  		<div>
+			  			<div style="float: left">
+			  				<font size="2px" style="color: #4D009A">{{news_feed.author}}</font>
+			  			</div>
+			  			<div style="float: right">
+			  				<font size="2px" style="opacity: 0.3">{{news_feed.time}}</font>
+			  			</div>
+			  			<br style="clear:both;" />
+			  		</div>
+		  		  <font size="5px">{{news_feed.title}}</font>
+				  <br>
+				  <font size="1px" style="opacity: 0.5; letter-spacing: 3px"><b>{{news_feed.category}}</b></font>
+				</div>
 			</div>
-		  	<div style="padding: 10px 0px 10px 0px; flex: 4">
-		  		<div>
-		  			<div style="float: left">
-		  				<font size="2px" style="color: #4D009A">Claudiaaaa</font>
-		  			</div>
-		  			<div style="float: right">
-		  				<font size="2px" style="opacity: 0.3">15 mins ago</font>
-		  			</div>
-		  			<br style="clear:both;" />
-		  		</div>
-	  		  <font size="5px">Hair loss is affecting your career</font>
-			  <br>
-			  <font size="1px" style="opacity: 0.5; letter-spacing: 3px"><b>BUSINESS</b></font>
-			</div>
-		</div>
-	  </ion-item>
-	  <ion-item>
-	  	<div style="display: flex; align-items: center; width: 100%">
-	  		<div style="flex: 1">
-				<img src="/assets/imgs/news_2.jpg" style="width: 70px; height: auto;">
-			</div>
-		  	<div style="padding: 10px 0px 10px 0px; flex: 4">
-		  		<div>
-		  			<div style="float: left">
-		  				<font size="2px" style="color: #4D009A">Yuri</font>
-		  			</div>
-		  			<div style="float: right">
-		  				<font size="2px" style="opacity: 0.3">15 mins ago</font>
-		  			</div>
-		  			<br style="clear:both;" />
-		  		</div>
-	  		  <font size="5px">"Best Hair Treatment" U Life Magazine</font>
-			  <br>
-			  <font size="1px" style="opacity: 0.5; letter-spacing: 3px"><b>LEISURE</b></font>
-			</div>
-		</div>
-	  </ion-item>
-	  <ion-item>
-	  	<div style="display: flex; align-items: center; width: 100%">
-	  		<div style="flex: 1">
-				<img src="/assets/imgs/news_3.jpg" style="width: 70px; height: auto;">
-			</div>
-		  	<div style="padding: 10px 0px 10px 0px; flex: 4">
-		  		<div>
-		  			<div style="float: left">
-		  				<font size="2px" style="color: #4D009A">Benjamin</font>
-		  			</div>
-		  			<div style="float: right">
-		  				<font size="2px" style="opacity: 0.3">15 mins ago</font>
-		  			</div>
-		  			<br style="clear:both;" />
-		  		</div>
-	  		  <font size="5px">Build a local business</font>
-			  <br>
-			  <font size="1px" style="opacity: 0.5; letter-spacing: 3px"><b>BUSINESS</b></font>
-			</div>
-		</div>
-	  </ion-item>
-	  <ion-item>
-	  	<div style="display: flex; align-items: center; width: 100%">
-	  		<div style="flex: 1">
-				<img src="/assets/imgs/news_4.jpg" style="width: 70px; height: auto;">
-			</div>
-		  	<div style="padding: 10px 0px 10px 0px; flex: 4">
-		  		<div>
-		  			<div style="float: left">
-		  				<font size="2px" style="color: #4D009A">William Wong</font>
-		  			</div>
-		  			<div style="float: right">
-		  				<font size="2px" style="opacity: 0.3">15 mins ago</font>
-		  			</div>
-		  			<br style="clear:both;" />
-		  		</div>
-	  		  <font size="5px">Anti hair loss shampoo's claims proved to be fake</font>
-			  <br>
-			  <font size="1px" style="opacity: 0.5; letter-spacing: 3px"><b>LIFESSTYLE</b></font>
-			</div>
-		</div>
-	  </ion-item>
-	  <ion-item>
-	  	<div style="display: flex; align-items: center; width: 100%">
-	  		<div style="flex: 1">
-				<img src="/assets/imgs/news_5.jpg" style="width: 70px; height: auto;">
-			</div>
-		  	<div style="padding: 10px 0px 10px 0px; flex: 4">
-		  		<div>
-		  			<div style="float: left">
-		  				<font size="2px" style="color: #4D009A">Alan</font>
-		  			</div>
-		  			<div style="float: right">
-		  				<font size="2px" style="opacity: 0.3">15 mins ago</font>
-		  			</div>
-		  			<br style="clear:both;" />
-		  		</div>
-	  		  <font size="5px">The secret to healthy hair</font>
-			  <br>
-			  <font size="1px" style="opacity: 0.5; letter-spacing: 3px"><b>LIFESSTYLE</b></font>
-			</div>
-		</div>
-	  </ion-item>
+		</ion-item>
 	</ion-list>
 </ion-content>

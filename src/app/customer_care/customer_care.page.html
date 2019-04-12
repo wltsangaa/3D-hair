@@ -10,32 +10,30 @@
 </ion-header>
 
 <ion-content>
-		<table>
+	<table>
 		<tr>
 			<td style="width:33%; height: 0px">
 				<ion-card style="background:#9E9E9E; box-shadow: none; border-radius: 15px; margin: 3px; height: 100%">
 					<ion-card-content style="color:white; text-align:center;">
-						<font size=4px>Give us a call<br><hr></font>
-						<div style="width: 100%; text-align: center">
-							<img src="/assets/imgs/customer_care_call.png" style="width: auto; height: 50px;">
-						</div>
+						<font size=4px>Give us a call<br><br><br></font>
 					</ion-card-content>
+					<img src="/assets/imgs/customer_care_call.png" style="width: auto; height: 40px; left: 0px; right: 0px; margin-left: auto; margin-right: auto; position: absolute; bottom: 10px">
 				</ion-card>
 			</td>
 			<td style="width:33%; height: 0px">
 				<ion-card style="background:#7C4274; box-shadow: none; border-radius: 15px; margin: 3px; height: 100%">
 					<ion-card-content style="color:white; text-align:center;">
-						<font size=4px>Common Questions<br><hr></font>
-						<img src="/assets/imgs/customer_care_question.png" style="width: auto; height: 40px;">
+						<font size=4px>Common Questions<br><br><br></font>
 					</ion-card-content>
+					<img src="/assets/imgs/customer_care_question.png" style="width: auto; height: 40px; left: 0px; right: 0px; margin-left: auto; margin-right: auto; position: absolute; bottom: 10px">
 				</ion-card>
 			</td>
 			<td style="width:33%; height: 0px">
 				<ion-card style="background:#FF6AC3; box-shadow: none; border-radius: 15px; margin: 3px; height: 100%">
 					<ion-card-content style="color:white; text-align:center;">
-						<font size=4px>Leave us a message<br><hr></font>
-						<img src="/assets/imgs/customer_care_message.png" style="width: auto; height: 40px;">
+						<font size=4px>Leave us a message<br><br><br></font>
 					</ion-card-content>
+					<img src="/assets/imgs/customer_care_message.png" style="width: auto; height: 40px; left: 0px; right: 0px; margin-left: auto; margin-right: auto; position: absolute; bottom: 10px">
 				</ion-card>
 			</td>
 		</tr>
@@ -44,48 +42,12 @@
 		<font size=5px>Our stores</font>
 	</div>
 	<ion-list lines="none">
-	  <ion-item style="--ion-background-color: #F0F0F0">
+	  <ion-item  [color]="i%2 != 0? 'white' : 'light'" *ngFor="let store_info of store_infos; let i = index;">
 	  	<div style="width: 100%">
 		  	<div style="padding: 10px 0px 10px 0px">
-	  		  <font size="4px"><b>Central Store</b></font>
+	  		  <font size="4px"><b>{{store_info.store}}</b></font>
 			  <br>
-			  <font size="3px" style="opacity: 0.3">St George's Building Level 12 2 Ice House Street Central</font>
-			</div>
-		</div>
-	  </ion-item>
-	  <ion-item style="--ion-background-color: #FFFFFF">
-	  	<div style="width: 100%">
-		  	<div style="padding: 10px 0px 10px 0px">
-	  		  <font size="4px"><b>Causeway Bay Store</b></font>
-			  <br>
-			  <font size="3px" style="opacity: 0.3">23rd Floor, Hysan Place. 500 Hennessy Road, Causeway Bay</font>
-			</div>
-		</div>
-	  </ion-item>
-	  <ion-item style="--ion-background-color: #F0F0F0">
-	  	<div style="width: 100%">
-		  	<div style="padding: 10px 0px 10px 0px">
-	  		  <font size="4px"><b>Mong Kok Store</b></font>
-			  <br>
-			  <font size="3px" style="opacity: 0.3">Shop A, G/F., HSH Mongkok Plaza, 794-802 Nathan Road, Mong Kok</font>
-			</div>
-		</div>
-	  </ion-item>
-	  <ion-item style="--ion-background-color: #FFFFFF">
-	  	<div style="width: 100%">
-		  	<div style="padding: 10px 0px 10px 0px">
-	  		  <font size="4px"><b>Tsim Sha Tsui Store</b></font>
-			  <br>
-			  <font size="3px" style="opacity: 0.3">1/F, Hermes House, 10 Middle Road, Tsim Sha Tsui</font>
-			</div>
-		</div>
-	  </ion-item>
-	  <ion-item style="--ion-background-color: #F0F0F0">
-	  	<div style="width: 100%">
-		  	<div style="padding: 10px 0px 10px 0px">
-	  		  <font size="4px"><b>Kowloon Tong Store</b></font>
-			  <br>
-			  <font size="3px" style="opacity: 0.3">39 Inverness Road, Kowloon Tong</font>
+			  <font size="3px" style="opacity: 0.3">{{store_info.location}}</font>
 			</div>
 		</div>
 	  </ion-item>

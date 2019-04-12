@@ -15,21 +15,21 @@
     <br>
     <br>
     <br>
-    <ion-list id="login-list4">
+    <ion-list>
       <div class="center_wrapper">
         <font size=2px color=#8175C2>Username</font>
       </div>
-      <ion-item id="login-input1">
-        <img src="/assets/imgs/person.png" width=auto height=30px style="opacity: 0.25">
-        <ion-input type="text" [(ngModel)]="email" placeholder=""></ion-input>
+      <ion-item>
+        <img src="/assets/imgs/person.png" width=auto height=30px style="opacity: 0.25; position: absolute;">
+        <ion-input type="text" [(ngModel)]="email" style="text-align: center"></ion-input>
       </ion-item>
       <br>
       <div class="center_wrapper">
         <font size=2px color=#8175C2>Password</font>
       </div>
-      <ion-item id="login-input2">
-        <img src="/assets/imgs/password.png" width=auto height=30px style="opacity: 0.25">
-        <ion-input type="password" [(ngModel)]="password" placeholder=""></ion-input>
+      <ion-item>
+        <img src="/assets/imgs/password.png" width=auto height=30px style="opacity: 0.25; position: absolute;">
+        <ion-input type="password" [(ngModel)]="password" style="text-align: center"></ion-input>
       </ion-item>
       <div *ngIf="errorMessage!= Null">
         Incorrect Email/Password
@@ -43,7 +43,7 @@
     </button>
   </div>
   <div class="center_wrapper" style="margin: 6px">
-    <button ion-button (click)="login()">
+    <button ion-button (click)="passwordRecovery()">
       <font size=2px color=#8175C2>Forget password?</font>
     </button>
   </div>

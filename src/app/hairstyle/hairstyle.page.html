@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="text-align: center">
 	<table style="margin: 10px; margin-left: auto; margin-right: auto;">
 		<tr>
 			<td>
@@ -42,6 +42,11 @@
 			<td>
 				<img src="/assets/imgs/hairstyle_8.jpg">
 			</td>
+		</tr>
+	</table>
+	<table style="margin: 10px; margin-left: auto; margin-right: auto;">
+		<tr *ngFor="let _ of [].constructor(hairstyles.length/2); let i = index">
+			{{i}}
 		</tr>
 	</table>
 </ion-content>

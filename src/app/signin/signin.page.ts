@@ -15,4 +15,6 @@ export class SigninPage {
   login() {
   	this.router.navigate(["/home"]);
   }
+  passwordRecovery() {
+  }
 }
