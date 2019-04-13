@@ -11,42 +11,10 @@
 
 <ion-content style="text-align: center">
 	<table style="margin: 10px; margin-left: auto; margin-right: auto;">
-		<tr>
-			<td>
-				<img src="/assets/imgs/hairstyle_1.jpg">
-			</td>
-			<td>
-				<img src="/assets/imgs/hairstyle_2.jpg">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<img src="/assets/imgs/hairstyle_3.jpg">
-			</td>
-			<td>
-				<img src="/assets/imgs/hairstyle_4.jpg">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<img src="/assets/imgs/hairstyle_5.jpg">
-			</td>
-			<td>
-				<img src="/assets/imgs/hairstyle_6.jpg">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<img src="/assets/imgs/hairstyle_7.jpg">
-			</td>
-			<td>
-				<img src="/assets/imgs/hairstyle_8.jpg">
-			</td>
-		</tr>
-	</table>
-	<table style="margin: 10px; margin-left: auto; margin-right: auto;">
 		<tr *ngFor="let _ of [].constructor(hairstyles.length/2); let i = index">
-			{{i}}
+			<td *ngFor="let hairstyle of hairstyles.slice(i*2,(i+1)*2); let j = index">
+				<img [src]="hairstyle.photo" (click)="hairstyleSelect(i*2+j)">
+			</td>
 		</tr>
 	</table>
 </ion-content>

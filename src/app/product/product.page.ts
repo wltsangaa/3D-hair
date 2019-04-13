@@ -41,4 +41,9 @@ export class ProductPage {
   slidesDidLoad(slides: IonSlides) {
     slides.startAutoplay();
   }
+  book() {
+    console.log(this.selected_month);
+    console.log(this.selected_day);
+    console.log(this.selected_duration);
+  }
 }

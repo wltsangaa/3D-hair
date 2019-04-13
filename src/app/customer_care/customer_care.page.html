@@ -42,7 +42,7 @@
 		<font size=5px>Our stores</font>
 	</div>
 	<ion-list lines="none">
-	  <ion-item  [color]="i%2 != 0? 'white' : 'light'" *ngFor="let store_info of store_infos; let i = index;">
+	  <ion-item  [color]="i%2 != 0? 'white' : 'light'" *ngFor="let store_info of store_infos; let i = index;" (click)="viewStore(i)">
 	  	<div style="width: 100%">
 		  	<div style="padding: 10px 0px 10px 0px">
 	  		  <font size="4px"><b>{{store_info.store}}</b></font>

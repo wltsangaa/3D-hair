@@ -7,9 +7,20 @@ import { Router } from '@angular/router';
   styleUrls: ['signup.page.scss'],
 })
 export class SignupPage {
+	user_input = {
+		username: "",
+	    email: "",
+	    country: "",
+	    phone: "", 
+    	password: ""
+	};
+
 	constructor (private router: Router) {
 	}
 	goToSignin () {
 		this.router.navigate(["/signin"]);
+	}
+	signup() {
+		console.log(this.user_input);
 	}
 }

@@ -7,10 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['bill.page.scss'],
 })
 export class BillPage {
-	transactions: object[];
 	bill_info: object;
+	transactions: object[];
 
 	constructor(private router: Router) {
+		this.bill_info = {
+			num_past_booking: 14,
+			num_bookings_left: 10,
+			subscription_end_date: "2/12/2010"
+		};
 		this.transactions = [
 			{
 				title: "Hair Wig Subscription",
@@ -38,13 +43,11 @@ export class BillPage {
 				price: 999
 			}
 		];
-		this.bill_info = {
-			num_past_booking: 14,
-			num_bookings_left: 10,
-			subscription_end_date: "2/12/2010"
-		};
 	}
 	goToSignup() {
 	this.router.navigate(["/signup"]);
+	}
+	selectTransaction(selected_index) {
+		console.log(selected_index);
 	}
 }

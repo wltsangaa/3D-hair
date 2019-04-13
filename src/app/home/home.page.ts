@@ -14,7 +14,7 @@ export class HomePage {
   		username: "Benjamin Trolio",
   		avatar_img: "/assets/imgs/avatar.png", 
   		charge: {
-  			amount: 0, 
+  			amount: 999, 
   			due_date: "22/02/2019"
   		},
   		product: {

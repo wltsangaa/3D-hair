@@ -7,9 +7,38 @@ import { Router } from '@angular/router';
   styleUrls: ['profile.page.scss'],
 })
 export class ProfilePage {
-  constructor(private router: Router) {
-  }
-  goToSignup() {
-    this.router.navigate(["/signup"]);
-  }
+
+	user_info = {
+		name: "", 
+		title: "", 
+		username: "",
+		email: "",
+		notification_toggle: false
+	};
+
+	subsections: string[];
+	selected_subsection = "";
+
+	constructor(private router: Router) {
+		this.user_info = {
+			name: "Benjamin Trolio", 
+			title: "UI/UX Designer", 
+			username: "benjamin.trolio",
+			email: "basdfljakhsfd",
+			notification_toggle: true
+		};
+		this.subsections = ["about", "settings", "shots"];
+		this.selected_subsection = "settings";
+	}
+
+	printSubsec() {
+		console.log(this.selected_subsection);
+	}
+	
+	editUsername() {
+
+	}
+	editEmail() {
+
+	}
 }

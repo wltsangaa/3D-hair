@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HairstylePage {
 	hairstyles: object[];
+  selected_hairstyle_index: number;
 
   constructor(private router: Router) {
   	this.hairstyles = [
@@ -36,8 +37,13 @@ export class HairstylePage {
   			photo: "/assets/imgs/hairstyle_8.jpg"
   		}
   	];
+    this.selected_hairstyle_index = -1;
   }
   goToSignup() {
     this.router.navigate(["/signup"]);
+  }
+  hairstyleSelect(hairstyle_index) {
+    this.selected_hairstyle_index = hairstyle_index;
+    console.log(this.selected_hairstyle_index);
   }
 }

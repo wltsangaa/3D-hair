@@ -17,34 +17,42 @@
     <br>
     <ion-list>
       <div class="center_wrapper">
-        <font size=2px color=#8175C2>Username</font>
+        <ion-text color="dark-purple" style="font-size: 14px">
+          Username
+        </ion-text>
       </div>
       <ion-item>
         <img src="/assets/imgs/person.png" width=auto height=30px style="opacity: 0.25; position: absolute;">
-        <ion-input type="text" [(ngModel)]="email" style="text-align: center"></ion-input>
+        <ion-input type="text" [(ngModel)]="user_input.username" style="text-align: center"></ion-input>
       </ion-item>
       <br>
       <div class="center_wrapper">
-        <font size=2px color=#8175C2>Password</font>
+        <ion-text color="dark-purple" style="font-size: 14px">
+          Password
+        </ion-text>
       </div>
       <ion-item>
         <img src="/assets/imgs/password.png" width=auto height=30px style="opacity: 0.25; position: absolute;">
-        <ion-input type="password" [(ngModel)]="password" style="text-align: center"></ion-input>
+        <ion-input type="password" [(ngModel)]="user_input.password" style="text-align: center"></ion-input>
       </ion-item>
-      <div *ngIf="errorMessage!= Null">
+      <div *ngIf="errorMessage != Null">
         Incorrect Email/Password
       </div>
     </ion-list>
   </div>
   <br>
   <div class="center_wrapper">
-    <button class="round_button" ion-button round [disabled]="!email || !password" (click)="login()">
-      SIGN IN
-    </button>
+    <ion-button shape="round" color="purple" style="width: 85%; height: 40px" [disabled]="!user_input.username || !user_input.password" (click)="login()">
+      <ion-text color="white" style="font-size: 15px">
+        SIGN IN
+      </ion-text>
+    </ion-button>
   </div>
   <div class="center_wrapper" style="margin: 6px">
     <button ion-button (click)="passwordRecovery()">
-      <font size=2px color=#8175C2>Forget password?</font>
+      <ion-text color="dark-purple" style="font-size: 14px">
+          Forgot password?
+      </ion-text>
     </button>
   </div>
   <br>
@@ -57,9 +65,13 @@
     <img src="/assets/imgs/google_plus.png" width=auto height=50px style="margin-left: 25px; margin-right: 25px;">
   </div>
   <div class="center_wrapper" style="margin: 6px">
-    <font size=2px color=#8175C2>Don't have an account?</font>
-    <button ion-button (click)="goToSignup()">
-      <font size=2px color=#9E8EF0>SIGN UP</font>
+    <ion-text color="dark-purple" style="font-size: 14px">
+        Don't have an account?
+    </ion-text>
+    <button (click)="goToSignup()">
+      <ion-text color="purple" style="font-size: 14px">
+          SIGN UP
+      </ion-text>
     </button>
   </div>
   <br>

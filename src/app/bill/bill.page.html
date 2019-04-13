@@ -57,7 +57,7 @@
 		<font size=5px>Past Transactions</font>
 	</div>
 	<ion-list lines="none">
-	  <ion-item [color]="i%2 != 0? 'white' : 'light'" *ngFor="let transaction of transactions; let i = index;">
+	  <ion-item [color]="i%2 != 0? 'white' : 'light'" *ngFor="let transaction of transactions; let i = index;" (click)="selectTransaction(i)">
 	  	<div style="display: flex; align-items: center; width: 100%">
 		  	<div style="padding: 10px 0px 10px 0px; flex: 5">
 	  		  <font size="4px"><b>{{transaction.title}}</b></font>

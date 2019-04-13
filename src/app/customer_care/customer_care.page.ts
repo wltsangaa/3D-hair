@@ -36,4 +36,7 @@ export class CustomerCarePage {
 	goToSignup() {
 	this.router.navigate(["/signup"]);
 	}
+	viewStore(store_index) {
+		console.log(store_index);
+	}
 }

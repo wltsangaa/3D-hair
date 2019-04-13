@@ -16,31 +16,30 @@
 			<img src="/assets/imgs/photo.png" style="width: auto; height: 40px; position: absolute; left: 160px; right: 0px; margin-left: auto; margin-right: auto; top: 0px; bottom: 0px; margin-top: auto; margin-bottom: auto;">
 		</div>
 		<br>
-		<font size="6px"><b>Benjamin Trolio</b></font>
+		<font size="6px"><b>{{user_info.name}}</b></font>
 		<br>
-		<font size="4px">UI/UX Designer</font>
+		<font size="4px">{{user_info.title}}</font>
 	</div>
-	<ion-segment (ionChange)="segmentChanged($event)">
-	  <ion-segment-button value="about">
-	    <ion-label>About</ion-label>
-	  </ion-segment-button>
-	  <ion-segment-button value="settings">
-	    <ion-label>Settings</ion-label>
-	  </ion-segment-button>
-	  <ion-segment-button value="Shots">
-	    <ion-label>Shots</ion-label>
+	<ion-segment>
+	  <ion-segment-button *ngFor="let subsection of subsections" [checked]="subsection==selected_subsection" (click)="selected_subsection=subsection">
+	  	<ion-label>{{subsection}}</ion-label>
 	  </ion-segment-button>
 	</ion-segment>
-	<ion-list lines="none" style="display: none">
+	<ion-list lines="none" *ngIf="selected_subsection==='about'">
+		Hi I'm Donald Trump.
+	</ion-list>
+	<ion-list lines="none" *ngIf="selected_subsection==='settings'">
 		<ion-item style="--ion-background-color: #FFFFFF">
 		  	<div style="display: flex; align-items: center; width: 100%">
 			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
 			  		<font size="3px" style="opacity: 0.3">Username</font>
 			  		<br>
-		  		  	<font size="4px">benjamin.trolio</font>
+		  		  	<font size="4px">{{user_info.username}}</font>
 				</div>
 				<div style="flex: 1">
-					<font size="4px" style="text-align: right; color: #FF7346">Edit</font>
+					<button (click)="editUsername()">
+						<font size="4px" style="text-align: right; color: #FF7346">Edit</font>
+					</button>
 				</div>
 			</div>
 		  </ion-item>
@@ -49,10 +48,12 @@
 			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
 			  		<font size="3px" style="opacity: 0.3">Email</font>
 			  		<br>
-		  		  	<font size="4px">benjamin.lau@3dhair.org</font>
+		  		  	<font size="4px">{{user_info.email}}</font>
 				</div>
 				<div style="flex: 1">
-					<font size="4px" style="text-align: right; color: #FF7346">Edit</font>
+					<button (click)="editEmail()">
+						<font size="4px" style="text-align: right; color: #FF7346">Edit</font>
+					</button>
 				</div>
 			</div>
 		  </ion-item>
@@ -61,54 +62,16 @@
 			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
 			  		<font size="3px" style="opacity: 0.3">Receive notifications</font>
 			  		<br>
-		  		  	<font size="4px">Enabled</font>
+		  		  	<font size="4px">{{user_info.notification_toggle?"Enabled":"Disabled"}}</font>
 				</div>
-				<div style="flex: 1; margin-right: 17px">
-					<ion-toggle color="orange">
-						
+				<div style="flex: 1; margin-right: 10px">
+					<ion-toggle color="orange" [(ngModel)]="user_info.notification_toggle">
 					</ion-toggle>
 				</div>
 			</div>
 		  </ion-item>
 	</ion-list>
-	<ion-list lines="none">
-		<ion-item style="--ion-background-color: #FFFFFF">
-		  	<div style="display: flex; align-items: center; width: 100%">
-			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
-			  		<font size="3px" style="opacity: 0.3">Username</font>
-			  		<br>
-		  		  	<font size="4px">benjamin.trolio</font>
-				</div>
-				<div style="flex: 1">
-					<font size="4px" style="text-align: right; color: #FF7346">Edit</font>
-				</div>
-			</div>
-		  </ion-item>
-		  <ion-item style="--ion-background-color: #FFFFFF">
-		  	<div style="display: flex; align-items: center; width: 100%">
-			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
-			  		<font size="3px" style="opacity: 0.3">Email</font>
-			  		<br>
-		  		  	<font size="4px">basdfljakhsfd</font>
-				</div>
-				<div style="flex: 1">
-					<font size="4px" style="text-align: right; color: #FF7346">Edit</font>
-				</div>
-			</div>
-		  </ion-item>
-		  <ion-item>
-		  	<div style="display: flex; align-items: center; width: 100%">
-			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
-			  		<font size="3px" style="opacity: 0.3">Receive notifications</font>
-			  		<br>
-		  		  	<font size="4px">Enabled</font>
-				</div>
-				<div style="flex: 1; margin-right: 17px">
-					<ion-toggle color="orange">
-						
-					</ion-toggle>
-				</div>
-			</div>
-		  </ion-item>
+	<ion-list lines="none" *ngIf="selected_subsection==='shots'">
+		No shots
 	</ion-list>
 </ion-content>
