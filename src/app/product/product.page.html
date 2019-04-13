@@ -27,20 +27,26 @@
 	Start date
 	<ion-card>
 		<ion-card-content style="padding: 10px 0px 10px 0px">
-			<div>
-				<button class="month-button" *ngFor="let month of months" (click)="select_month(month)" [ngClass]="month==selected_month?'month-button-selected':'month-button-unselected'">
-					<font size="3px">{{month}}</font>
-				</button>
+			<div class="scroll-container">
+				<div class="scroll" scrollX="true">
+					<button class="month-button" *ngFor="let month of months" (click)="select_month(month)" [ngClass]="month==selected_month?'month-button-selected':'month-button-unselected'">
+						<font size="3px">{{month}}</font>
+					</button>
+				</div>
 			</div>
-			<div style="background-color: #F5F5F5;">
-				<button class="day-button" *ngFor="let day of days" (click)="select_day(day)" [ngClass]="day==selected_day?'day-button-selected':'day-button-unselected'">
-					<font size="3px">{{day}}</font>
-				</button>
+			<div class="scroll-container">
+				<div style="background-color: #F5F5F5" class="scroll" scrollX="true">
+					<button class="day-button" *ngFor="let day of days" (click)="select_day(day)" [ngClass]="day==selected_day?'day-button-selected':'day-button-unselected'">
+						<font size="3px">{{day}}</font>
+					</button>
+				</div>
 			</div>
-			<div>
-				<button class="duration-button" *ngFor="let duration of durations" (click)="select_duration(duration)" [ngClass]="duration==selected_duration?'duration-button-selected':'duration-button-unselected'">
-					<font size="3px">{{duration}} months</font>
-				</button>
+			<div class="scroll-container">
+				<div class="scroll" scrollX="true">
+					<button class="duration-button" *ngFor="let duration of durations" (click)="select_duration(duration)" [ngClass]="duration==selected_duration?'duration-button-selected':'duration-button-unselected'">
+						<font size="3px">{{duration}} months</font>
+					</button>
+				</div>
 			</div>
 		</ion-card-content>
 	</ion-card>

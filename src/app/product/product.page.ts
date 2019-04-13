@@ -20,8 +20,8 @@ export class ProductPage {
 
   constructor(private router: Router) {
   	this.months = ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan 18", "Feb 18"];
-    this.days = [3, 4, 5, 6, 7, 8, 9, 10, 11];
-    this.durations = [1, 2, 3];
+    this.days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+    this.durations = [24];
     this.product_contents = [
       "", "Includes 24 free maintenance session", ""
     ];
