@@ -32,7 +32,7 @@ export class BookingPage {
     return arr;
   }
   get_day_range(month: number) {
-    switch ((month-1)%12+1) {
+    switch ((month%100-1)%12+1) {
       case 1: case 3: case 5: case 7: case 8: case 10: case 12:
         return this.get_range(1, 31 + 1);
       case 4: case 6: case 9: case 11:
@@ -55,8 +55,6 @@ export class BookingPage {
       var new_month = (curr_month + i) % 12;
       months.push(new_year * 100 + new_month + 1);
     }
-
-    console.log(months);
 
     return months;
   }
