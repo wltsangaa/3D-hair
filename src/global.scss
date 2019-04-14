@@ -24,6 +24,10 @@ ion-title {
     text-align: center;
 }
 
+button {
+  background-color: transparent;
+}
+
 .ion-color-purple {
   --ion-color-base: var(--ion-color-purple) !important;
   --ion-color-base-rgb: var(--ion-color-purple-rgb) !important;
