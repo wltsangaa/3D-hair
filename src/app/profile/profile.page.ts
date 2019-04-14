@@ -30,15 +30,15 @@ export class ProfilePage {
 		this.subsections = ["about", "settings", "shots"];
 		this.selected_subsection = "settings";
 	}
-
-	printSubsec() {
-		console.log(this.selected_subsection);
-	}
 	
 	editUsername() {
 
 	}
 	editEmail() {
 
+	}
+
+	upload_photo() {
+		console.log("Upload photo");
 	}
 }
