@@ -35,8 +35,11 @@
         <img src="/assets/imgs/password.png" width=auto height=30px style="opacity: 0.25; position: absolute;">
         <ion-input type="password" [(ngModel)]="user_input.password" style="text-align: center"></ion-input>
       </ion-item>
-      <div *ngIf="errorMessage != Null">
-        Incorrect Email/Password
+      <div *ngIf="login_error_msg != Null" style="text-align: center">
+        <ion-label color="danger">
+          <br>
+          {{login_error_msg}}
+        </ion-label>
       </div>
     </ion-list>
   </div>

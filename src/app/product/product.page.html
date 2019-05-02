@@ -29,8 +29,8 @@
 		<ion-card-content style="padding: 10px 0px 10px 0px">
 			<div class="scroll-container">
 				<div class="scroll" scrollX="true">
-					<button class="month-button" *ngFor="let month of months" (click)="select_month(month)" [ngClass]="month==selected_month?'month-button-selected':'month-button-unselected'">
-						<font size="3px">{{get_month_names(month)}}</font>
+					<button class="month-button" *ngFor="let yearmonth of yearmonths" (click)="select_yearmonth(yearmonth)" [ngClass]="yearmonth==selected_yearmonth?'month-button-selected':'month-button-unselected'">
+						<font size="3px">{{get_yearmonth_names(yearmonth)}}</font>
 					</button>
 				</div>
 			</div>

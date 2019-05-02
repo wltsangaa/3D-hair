@@ -63,3 +63,12 @@ button {
   --ion-color-shade: var(--ion-color-white-shade) !important;
   --ion-color-tint: var(--ion-color-white-tint) !important;
 }
+
+.ion-color-black {
+  --ion-color-base: var(--ion-color-black) !important;
+  --ion-color-base-rgb: var(--ion-color-black-rgb) !important;
+  --ion-color-contrast: var(--ion-color-black-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-black-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-black-shade) !important;
+  --ion-color-tint: var(--ion-color-black-tint) !important;
+}

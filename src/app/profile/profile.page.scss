@@ -1,3 +1,11 @@
 ion-header::after {
 background-image: none;
 }
+
+.text_edit_true {
+	background-color: #F5F8FD;
+}
+
+.text_edit_false {
+	background-color: transparent;
+}

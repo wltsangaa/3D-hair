@@ -57,7 +57,7 @@ var ProductPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n    </ion-buttons>\n    <ion-title>\n      <b>Custom Styling Session</b>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content style=\"text-align: center\">\n\t<img src=\"/assets/imgs/product_thumbnail.jpg\" style=\"width: 100%; height: auto;\">\n\t<ion-card>\n\t\t<ion-card-content style=\"bottom: -13px\">\n\t\t\t<font size=\"4px\" style=\"color: black\">Hairstyle #3c</font>\n\t\t\t<br>\n\t\t\t<ion-slides pager=\"true\" #mySlider (ionSlidesDidLoad)=\"slidesDidLoad(mySlider)\" loop=\"true\">\n\t\t\t\t<ion-slide *ngFor=\"let product_content of product_contents\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<font size=\"3px\" style=\"color: black; opacity: 0.5\">{{product_content}}</font><br><br>\n\t\t\t\t\t</div>\n\t\t\t\t</ion-slide>\n\t\t\t</ion-slides>\n\t\t</ion-card-content>\n\t</ion-card>\n\tStart date\n\t<ion-card>\n\t\t<ion-card-content style=\"padding: 10px 0px 10px 0px\">\n\t\t\t<div class=\"scroll-container\">\n\t\t\t\t<div class=\"scroll\" scrollX=\"true\">\n\t\t\t\t\t<button class=\"month-button\" *ngFor=\"let month of months\" (click)=\"select_month(month)\" [ngClass]=\"month==selected_month?'month-button-selected':'month-button-unselected'\">\n\t\t\t\t\t\t<font size=\"3px\">{{month}}</font>\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"scroll-container\">\n\t\t\t\t<div style=\"background-color: #F5F5F5\" class=\"scroll\" scrollX=\"true\">\n\t\t\t\t\t<button class=\"day-button\" *ngFor=\"let day of days\" (click)=\"select_day(day)\" [ngClass]=\"day==selected_day?'day-button-selected':'day-button-unselected'\">\n\t\t\t\t\t\t<font size=\"3px\">{{day}}</font>\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"scroll-container\">\n\t\t\t\t<div class=\"scroll\" scrollX=\"true\">\n\t\t\t\t\t<button class=\"duration-button\" *ngFor=\"let duration of durations\" (click)=\"select_duration(duration)\" [ngClass]=\"duration==selected_duration?'duration-button-selected':'duration-button-unselected'\">\n\t\t\t\t\t\t<font size=\"3px\">{{duration}} months</font>\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</ion-card-content>\n\t</ion-card>\n\t<ion-card (click)=\"book()\">\n\t\t<ion-card-content style=\"padding: 15px 20px 15px 20px; background-color: #7869FF\">\n\t\t\t<div style=\"float: left\">\n\t\t\t\t<font size=\"3px\" color=\"white\">HKD$999 per month</font>\n\t\t\t</div>\n\t\t\t<div style=\"float: right\">\n\t\t\t\t<font size=\"3px\" color=\"white\">Book now</font>\n\t\t\t</div>\n\t\t\t<br style=\"clear:both;\" />\n\t\t</ion-card-content>\n\t</ion-card>\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n    </ion-buttons>\n    <ion-title>\n      <b>Custom Styling Session</b>\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content style=\"text-align: center\">\n\t<img src=\"/assets/imgs/product_thumbnail.jpg\" style=\"width: 100%; height: auto;\">\n\t<ion-card>\n\t\t<ion-card-content style=\"bottom: -13px\">\n\t\t\t<font size=\"4px\" style=\"color: black\">Hairstyle #3c</font>\n\t\t\t<br>\n\t\t\t<ion-slides pager=\"true\" #mySlider (ionSlidesDidLoad)=\"slidesDidLoad(mySlider)\" loop=\"true\">\n\t\t\t\t<ion-slide *ngFor=\"let product_content of product_contents\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<font size=\"3px\" style=\"color: black; opacity: 0.5\">{{product_content}}</font><br><br>\n\t\t\t\t\t</div>\n\t\t\t\t</ion-slide>\n\t\t\t</ion-slides>\n\t\t</ion-card-content>\n\t</ion-card>\n\tStart date\n\t<ion-card>\n\t\t<ion-card-content style=\"padding: 10px 0px 10px 0px\">\n\t\t\t<div class=\"scroll-container\">\n\t\t\t\t<div class=\"scroll\" scrollX=\"true\">\n\t\t\t\t\t<button class=\"month-button\" *ngFor=\"let month of months\" (click)=\"select_month(month)\" [ngClass]=\"month==selected_month?'month-button-selected':'month-button-unselected'\">\n\t\t\t\t\t\t<font size=\"3px\">{{get_month_names(month)}}</font>\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"scroll-container\">\n\t\t\t\t<div style=\"background-color: #F5F5F5\" class=\"scroll\" scrollX=\"true\">\n\t\t\t\t\t<button class=\"day-button\" *ngFor=\"let day of days\" (click)=\"select_day(day)\" [ngClass]=\"day==selected_day?'day-button-selected':'day-button-unselected'\">\n\t\t\t\t\t\t<font size=\"3px\">{{day}}</font>\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"scroll-container\">\n\t\t\t\t<div class=\"scroll\" scrollX=\"true\">\n\t\t\t\t\t<button class=\"duration-button\" *ngFor=\"let duration of durations\" (click)=\"select_duration(duration)\" [ngClass]=\"duration==selected_duration?'duration-button-selected':'duration-button-unselected'\">\n\t\t\t\t\t\t<font size=\"3px\">{{duration}} months</font>\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</ion-card-content>\n\t</ion-card>\n\t<ion-card (click)=\"book()\">\n\t\t<ion-card-content style=\"padding: 15px 20px 15px 20px; background-color: #7869FF\">\n\t\t\t<div style=\"float: left\">\n\t\t\t\t<font size=\"3px\" color=\"white\">HKD$999 per month</font>\n\t\t\t</div>\n\t\t\t<div style=\"float: right\">\n\t\t\t\t<font size=\"3px\" color=\"white\">Book now</font>\n\t\t\t</div>\n\t\t\t<br style=\"clear:both;\" />\n\t\t</ion-card-content>\n\t</ion-card>\n</ion-content>"
 
 /***/ }),
 
@@ -91,18 +91,67 @@ __webpack_require__.r(__webpack_exports__);
 var ProductPage = /** @class */ (function () {
     function ProductPage(router) {
         this.router = router;
-        this.months = ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan 18", "Feb 18"];
-        this.days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+        this.months = this.get_coming_n_months(12);
+        this.days = [];
         this.durations = [24];
         this.product_contents = [
             "", "Includes 24 free maintenance session", ""
         ];
     }
-    ProductPage.prototype.goToSignup = function () {
-        this.router.navigate(["/signup"]);
+    ProductPage.prototype.get_range = function (start, end) {
+        var arr = [];
+        for (var i = start; i < end; ++i)
+            arr.push(i);
+        return arr;
+    };
+    ProductPage.prototype.get_day_range = function (month) {
+        switch ((month % 100 - 1) % 12 + 1) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return this.get_range(1, 31 + 1);
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return this.get_range(1, 30 + 1);
+            case 2:
+                if (Math.floor(month / 100) % 4 == 0)
+                    return this.get_range(1, 29 + 1);
+                else
+                    return this.get_range(1, 28 + 1);
+        }
+    };
+    ProductPage.prototype.get_coming_n_months = function (n) {
+        var today = new Date();
+        var curr_month = today.getMonth(); // 0 start
+        var curr_year = today.getFullYear();
+        var months = [];
+        for (var i = 0; i < n; ++i) {
+            var new_year = Math.floor((curr_month + i) / 12) + curr_year;
+            var new_month = (curr_month + i) % 12;
+            months.push(new_year * 100 + new_month + 1);
+        }
+        return months;
+    };
+    ProductPage.prototype.get_month_names = function (month) {
+        var month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var month_name = month_names[month % 100 - 1];
+        if (((new Date()).getFullYear() != Math.floor(month / 100))) {
+            var year_name = Math.floor(month / 100).toString();
+            return month_name + " " + year_name;
+        }
+        else
+            return month_name;
     };
     ProductPage.prototype.select_month = function (month) {
         this.selected_month = month;
+        this.days = this.get_day_range(month);
     };
     ProductPage.prototype.select_day = function (day) {
         this.selected_day = day;

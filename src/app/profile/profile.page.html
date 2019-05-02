@@ -12,7 +12,7 @@
 <ion-content style="text-align: center">
 	<div style="margin: 20px">
 		<div style="position: relative; width: 100%; height: 160px;">
-			<img src="/assets/imgs/avatar.png" style="width: auto; height: 160px; position: absolute; left: 0px; right: 0px; margin-left: auto; margin-right: auto; top: 0px; bottom: 0px; margin-top: auto; margin-bottom: auto;">
+			<img src="/assets/imgs/avatar.png" style="width: auto; height: 160px; position: absolute; left: 0px; right: 0px; margin-left: auto; margin-right: auto; top: 0px; bottom: 0px; margin-top: auto; margin-bottom: auto; border-radius: 100px;">
 			<img src="/assets/imgs/photo.png" style="width: auto; height: 40px; position: absolute; left: 160px; right: 0px; margin-left: auto; margin-right: auto; top: 0px; bottom: 0px; margin-top: auto; margin-bottom: auto;" (click)="upload_photo()">
 		</div>
 		<br>
@@ -26,38 +26,67 @@
 	  </ion-segment-button>
 	</ion-segment>
 	<ion-list lines="none" *ngIf="selected_subsection==='about'">
-		Hi I'm Donald Trump.
+		<ion-textarea id="about_input" [(ngModel)]="user_info.about" [readonly]="editItem!='About'" [color]="editItem=='About'?'primary':''" [ngClass]="editItem=='About'?'text_edit_true':'text_edit_false'">
+		</ion-textarea>
+		<button (click)="editAbout(editItem!='About')">
+			<ion-label style="font-size: 18px; text-align: center;" color="orange" (click)="editAbout(editItem!='About')">
+				{{editItem!='About'?'Edit':'Done'}}
+			</ion-label>
+		</button>
 	</ion-list>
 	<ion-list lines="none" *ngIf="selected_subsection==='settings'">
 		<ion-item style="--ion-background-color: #FFFFFF">
 		  	<div style="display: flex; align-items: center; width: 100%">
 			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
-			  		<font size="3px" style="opacity: 0.3">Username</font>
-			  		<br>
-		  		  	<font size="4px">{{user_info.username}}</font>
+			  		<ion-label style="font-size: 17px; opacity: 0.3" no-padding>
+			  			Name
+			  		</ion-label>
+		  		  	<ion-input style="font-size: 18px;" no-padding [readonly]="editItem!='Name'" [color]="editItem=='Name'?'primary':'black'" [(ngModel)]="user_info.name"></ion-input>
 				</div>
 				<div style="flex: 1">
-					<button (click)="editUsername()">
-						<font size="4px" style="text-align: right; color: #FF7346">Edit</font>
+					<button (click)="editName(editItem!='Name')">
+						<ion-label style="font-size: 18px; text-align: center;" color="orange" (click)="editName(editItem!='Name')">
+							{{editItem!='Name'?'Edit':'Done'}}
+						</ion-label>
 					</button>
 				</div>
 			</div>
-		  </ion-item>
-		  <ion-item style="--ion-background-color: #FFFFFF">
+		</ion-item>
+		<ion-item style="--ion-background-color: #FFFFFF">
 		  	<div style="display: flex; align-items: center; width: 100%">
 			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
-			  		<font size="3px" style="opacity: 0.3">Email</font>
-			  		<br>
-		  		  	<font size="4px">{{user_info.email}}</font>
+			  		<ion-label style="font-size: 17px; opacity: 0.3" no-padding>
+			  			Username
+			  		</ion-label>
+		  		  	<ion-input style="font-size: 18px;" no-padding [readonly]="editItem!='Username'" [color]="editItem=='Username'?'primary':'black'" [(ngModel)]="user_info.username"></ion-input>
 				</div>
 				<div style="flex: 1">
-					<button (click)="editEmail()">
-						<font size="4px" style="text-align: right; color: #FF7346">Edit</font>
+					<button (click)="editUsername(editItem!='Username')">
+						<ion-label style="font-size: 18px; text-align: center;" color="orange" (click)="editUsername(editItem!='Username')">
+							{{editItem!='Username'?'Edit':'Done'}}
+						</ion-label>
 					</button>
 				</div>
 			</div>
-		  </ion-item>
-		  <ion-item>
+		</ion-item>
+		<ion-item style="--ion-background-color: #FFFFFF">
+		  	<div style="display: flex; align-items: center; width: 100%">
+			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
+			  		<ion-label style="font-size: 17px; opacity: 0.3" no-padding>
+			  			Email
+			  		</ion-label>
+		  		  	<ion-input style="font-size: 18px;" no-padding [readonly]="editItem!='Email'" [color]="editItem=='Email'?'primary':'black'" [(ngModel)]="user_info.email"></ion-input>
+				</div>
+				<div style="flex: 1">
+					<button (click)="editEmail(editItem!='Email')">
+						<ion-label style="font-size: 18px; text-align: center;" color="orange" (click)="editEmail(editItem!='Email')">
+							{{editItem!='Email'?'Edit':'Done'}}
+						</ion-label>
+					</button>
+				</div>
+			</div>
+		</ion-item>
+		<ion-item>
 		  	<div style="display: flex; align-items: center; width: 100%">
 			  	<div style="padding: 10px 0px 10px 0px; flex: 5">
 			  		<font size="3px" style="opacity: 0.3">Receive notifications</font>
@@ -65,11 +94,11 @@
 		  		  	<font size="4px">{{user_info.notification_toggle?"Enabled":"Disabled"}}</font>
 				</div>
 				<div style="flex: 1; margin-right: 10px">
-					<ion-toggle color="orange" [(ngModel)]="user_info.notification_toggle">
+					<ion-toggle color="orange" [(ngModel)]="user_info.notification_toggle" (click)="toggleNotification()">
 					</ion-toggle>
 				</div>
 			</div>
-		  </ion-item>
+		</ion-item>
 	</ion-list>
 	<ion-list lines="none" *ngIf="selected_subsection==='shots'">
 		No shots

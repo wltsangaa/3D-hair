@@ -101,9 +101,17 @@
 
   /** white **/
   --ion-color-white: #ffffff;
-  --ion-color-white-rgb: 0, 0, 0;
+  --ion-color-white-rgb: 255, 255, 255;
   --ion-color-white-contrast: #000000;
   --ion-color-white-contrast-rgb: 0, 0, 0;
   --ion-color-white-shade: #eeeeee;
   --ion-color-white-tint: #ffffff;
+
+  /** black **/
+  --ion-color-black: #000000;
+  --ion-color-black-rgb: 0, 0, 0;
+  --ion-color-black-contrast: #ffffff;
+  --ion-color-black-contrast-rgb: 255, 255, 255;
+  --ion-color-black-shade: #000000;
+  --ion-color-black-tint: #111111;
 }

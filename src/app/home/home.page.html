@@ -15,10 +15,10 @@
 			<div style="display:inline-block;">
 			    <div><font size="3px"><b>Your total charges are</b></font></div>
 			    <div>
-			    	<font size="2px">$</font>
+			    	<font size="2px">$ </font>
 			    	<font size="5px">{{user_info.charge.amount}}</font>
 			    </div>
-			    <div><font size="3px">Due date {{user_info.charge.due_date}}</font></div>
+			    <div><font size="3px">Due date: {{user_info.charge.amount > 0? user_info.charge.due_date: 'Not applicable'}}</font></div>
 			</div>
 			<div style="float: right; text-align: center">
 				<button *ngIf="user_info.charge.amount > 0" style="background: transparent; color: white; border-radius: 100px; border: 2px solid white; padding: 15px 25px 15px 25px;">
@@ -33,7 +33,7 @@
 				</div>
 				<div style="display:inline-block; width: 80%;">
 			  		<div style="margin: 3px"><font size="3px"><b>{{user_info.username}}</b></font></div>
-			  		<div style="margin: 3px"><font size="3px">Using Hairstyle #1b</font></div>
+			  		<div style="margin: 3px"><font size="3px">Using {{user_info.product.name!=null?user_info.product.name:'no products'}}</font></div>
 			  		<div style="margin: 3px">
 			  			<ion-progress-bar 
 			  			[value]="user_info.product.usage" 

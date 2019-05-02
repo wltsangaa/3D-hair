@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './services/user/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'signin', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'signin', loadChildren: './signin/signin.module#SigninPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
-  { path: 'bill', loadChildren: './bill/bill.module#BillPageModule' },
-  { path: 'booking', loadChildren: './booking/booking.module#BookingPageModule' },
-  { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
-  { path: 'product', loadChildren: './product/product.module#ProductPageModule' },
-  { path: 'customer_care', loadChildren: './customer_care/customer_care.module#CustomerCarePageModule' },
-  { path: 'hairstyle', loadChildren: './hairstyle/hairstyle.module#HairstylePageModule' }, 
-  { path: 'sub_cancel', loadChildren: './sub_cancel/sub_cancel.module#SubCancelPageModule' }
+  { path: 'home', loadChildren: './home/home.module#HomePageModule', canActivate: [AuthGuard] },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule', canActivate: [AuthGuard] },
+  { path: 'bill', loadChildren: './bill/bill.module#BillPageModule', canActivate: [AuthGuard] },
+  { path: 'booking', loadChildren: './booking/booking.module#BookingPageModule', canActivate: [AuthGuard] },
+  { path: 'news', loadChildren: './news/news.module#NewsPageModule', canActivate: [AuthGuard] },
+  { path: 'product', loadChildren: './product/product.module#ProductPageModule', canActivate: [AuthGuard] },
+  { path: 'customer_care', loadChildren: './customer_care/customer_care.module#CustomerCarePageModule', canActivate: [AuthGuard] },
+  { path: 'hairstyle', loadChildren: './hairstyle/hairstyle.module#HairstylePageModule', canActivate: [AuthGuard] }, 
+  { path: 'sub_cancel', loadChildren: './sub_cancel/sub_cancel.module#SubCancelPageModule', canActivate: [AuthGuard] }
 ];
 
 @NgModule({

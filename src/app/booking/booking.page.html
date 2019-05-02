@@ -28,8 +28,8 @@
 		<ion-card-content style="padding: 10px 0px 10px 0px">
 			<div class="scroll-container">
 				<div class="scroll" scrollX="true">
-					<button class="month-button" *ngFor="let month of months" (click)="select_month(month)" [ngClass]="month==selected_month?'month-button-selected':'month-button-unselected'">
-						<font size="3px">{{get_month_names(month)}}</font>
+					<button class="month-button" *ngFor="let yearmonth of yearmonths" (click)="select_yearmonth(yearmonth)" [ngClass]="yearmonth==selected_yearmonth?'month-button-selected':'month-button-unselected'">
+						<font size="3px">{{get_yearmonth_names(yearmonth)}}</font>
 					</button>
 				</div>
 			</div>
@@ -48,6 +48,22 @@
 				</div>
 			</div>
 		</ion-card-content>
+	</ion-card>
+	<ion-card>
+		<ion-card-content>
+		  <ion-item lines="none">
+		  	<img src="/assets/imgs/location.png" style="width: auto; height: 20px; margin-right: 5px;">
+		  	<ion-label>
+			    <font size="4px" style="color: black">Location</font>
+			</ion-label>
+		    <ion-select value="loc1" okText="Select" cancelText="Cancel">
+		      <ion-select-option value="loc1">Loc1</ion-select-option>
+		      <ion-select-option value="loc2">Loc2</ion-select-option>
+		      <ion-select-option value="loc3">Loc3</ion-select-option>
+		      <ion-select-option value="loc4">Loc4</ion-select-option>
+		    </ion-select>
+		  </ion-item>
+	  	</ion-card-content>
 	</ion-card>
 	<ion-card (click)="book()">
 		<ion-card-content style="padding: 15px 20px 15px 20px; background-color: #7869FF">
